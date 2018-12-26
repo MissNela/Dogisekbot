@@ -117,6 +117,6 @@ async def on_message(message):
       await client.add_reaction(dmmessage, reaction2)
       await client.send_message(channel, '📨 Podívej se do PM pro více informací {}'.format(message.author.mention)
       
-      await client.delete_message(dmmessage)
+      
 
 client.run(os.getenv("BOT"))
