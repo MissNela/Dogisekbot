@@ -115,7 +115,7 @@ async def on_message(message):
        await client.add_reaction(dmmessage, reaction1)
        await client.add_reaction(dmmessage, reaction2)
        await client.send_message(channel, '📨 Podívej se do PM pro více informací {}'.format(message.author.mention))
-   if message.content.upper() == ">SERVER INFO":
+  if message.content.upper() == ">SERVER INFO":
      server = message.server
      roles = [x.name for x in server.role_hierarchy]
      role_length = len(roles)
