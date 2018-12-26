@@ -30,10 +30,6 @@ async def on_ready():
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
 
-@client.event
-async def on_message(message):
-    channel = message.channel
-    r = random.choice
 
 @client.event
 async def on_message(message):
