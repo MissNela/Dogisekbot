@@ -33,12 +33,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    
     channel = message.channel
     r = random.choice
+    
     
     if message.content.upper() == "DOGISEK BOT":
         embed = discord.Embed(title = "Dogisek bot!", color = 0x311B92)
         embed.add_field(name="Muj prefix je",value="``>``!",inline=False)
-        await client.send_message(channel, embed=embed)
+        await client.send_message(message.channel, embed=embed)
 
 client.run(os.getenv("BOT"))
