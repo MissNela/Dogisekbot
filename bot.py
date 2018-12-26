@@ -117,7 +117,7 @@ async def on_message(message):
         await client.send_message(channel, '📨 Podívej se do PM pro více informací {}'.format(message.author.mention))
         
     if message.content.upper() == ">SERVER INFO":
-      h
+      
       server = message.server
       roles = [x.name for x in server.role_hierarchy]
       role_length = len(roles)
