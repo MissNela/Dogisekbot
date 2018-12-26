@@ -20,7 +20,7 @@ import aiohttp
 
 
 
-client = commands.Bot(command_prefix = "S!")
+client = commands.Bot(command_prefix = ">")
 
 client.remove_command('help')
 
@@ -161,8 +161,8 @@ async def on_message(message):
               embed.timestamp = datetime.datetime.utcnow()
               await client.send_message(channel, embed=embed)
 		
+		
     
-    if message.content.upper() == ">WARN":
 	
 	
 
