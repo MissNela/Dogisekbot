@@ -97,7 +97,10 @@ async def on_message(message):
     channel = message.channel
     r = random.choice
     user = message.author
-    
+   # if message.content.upper() == ">WARN":
+	
+	
+	
     if message.content.upper() == "DOGISEK BOT":
         embed = discord.Embed(title = "Dogisek bot!", color = 0x311B92)
         embed.add_field(name="Muj prefix je",value="``>``!",inline=False)
