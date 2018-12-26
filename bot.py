@@ -27,7 +27,7 @@ right = '⏩'
 general1=discord.Embed(title="Příkazy pro všechny!",description="``>cat`` +Ukáže ti random obrázek kočki! :D ``>dog`` + Ukáže ti random obrázek psa! :D ``>server info`` + Ukáže ti info o serveru! ``>meme`` + Ukáže ti random meme! xD",color = 0x304FFE)
 general2=discord.Embed(title="Připravuje se",description="------------------",color=0x304FFE)
 mod1=discord.Embed(title="Příkazy pro moderátory+!",description="``>warn`` +Varuje hráče! ``>ban`` +Banuje uživatele! ``>kick`` +Vyhodí uživatele!", color = 0xFF3D00)
-mod2=diecord.Embed(title="Připravuje se!",description="--------------------",color=0xFF3D00)
+mod2=discord.Embed(title="Připravuje se!",description="--------------------",color=0xFF3D00)
 
 gen_cmd = (general1, general2)
   
