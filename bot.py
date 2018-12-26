@@ -97,7 +97,8 @@ async def on_message(message):
     channel = message.channel
     r = random.choice
     user = message.author
-   # if message.content.upper() == ">WARN":
+    if message.content.upper() == ">WARN":
+	
 	
 	
 	
