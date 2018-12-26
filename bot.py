@@ -41,4 +41,4 @@ async def on_message(message):
         embed.add_field(name="Muj prefix je",value="``>``!",inline=False)
         await client.send_message(channel, embed=embed)
 
-client.run(os.getenv(BOT))
+client.run(os.getenv("BOT"))
