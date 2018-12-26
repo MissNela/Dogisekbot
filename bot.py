@@ -102,46 +102,48 @@ async def on_message(message):
     if message.content.upper() == ">HELP":
         
     
-       author = message.author
-       r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
-       embed.set_author(name='Potřebuješ pomoc?')
-       embed.add_field(name = 'React 🇲 ',value ='Ukáže ti příkazy pro Moderátory!.',inline = False)
-       embed.add_field(name = 'React 🇬 ',value ='Ukáže ti příkazy pro všechny.',inline = False)
-       dmmessage = await client.send_message(user, embed=embed)
-       reaction1 = '🇲'
-       reaction2 = '🇬'
+        author = message.author
+        r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+        embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+        embed.set_author(name='Potřebuješ pomoc?')
+        embed.add_field(name = 'React 🇲 ',value ='Ukáže ti příkazy pro Moderátory!.',inline = False)
+        embed.add_field(name = 'React 🇬 ',value ='Ukáže ti příkazy pro všechny.',inline = False)
+        dmmessage = await client.send_message(user, embed=embed)
+        reaction1 = '🇲'
+        reaction2 = '🇬'
       
-       await client.add_reaction(dmmessage, reaction1)
-       await client.add_reaction(dmmessage, reaction2)
-       await client.send_message(channel, '📨 Podívej se do PM pro více informací {}'.format(message.author.mention))
-  if message.content.upper() == ">SERVER INFO":
-     server = message.server
-     roles = [x.name for x in server.role_hierarchy]
-     role_length = len(roles)
-     if role_length > 50: #Just in case there are too many roles...
-         roles = roles[:50]
-         roles.append('>>>> Displaying[50/%s] Roles'%len(roles))
-     roles = ', '.join(roles);
-     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-     online = len([m.status for m in server.members if m.status == discord.Status.online or m.status == discord.Status.idle])
-     embed = discord.Embed(name="Informace o serveru {}".format(server.name), color = discord.Color((r << 16) + (g << 8) + b))
-     embed.set_thumbnail(url = server.icon_url)
-     embed.add_field(name="Jmeno Serveru", value=server.name, inline=True)
-     embed.add_field(name="Owner", value=server.owner.mention)
-     embed.add_field(name="Server ID", value=server.id, inline=True)
-     embed.add_field(name="Role", value=len(server.roles), inline=True)
-     embed.add_field(name="Kolik tu je hráčů?", value=len(server.members), inline=True)
-     embed.add_field(name="Online", value=f"**{online}/{len(server.members)}**")
-     embed.add_field(name="Server vytvořen", value=server.created_at.strftime("%d %b %Y %H:%M"))
-     embed.add_field(name="Emoji", value=f"{len(server.emojis)}/100")
-     embed.add_field(name="Server Region", value=str(server.region).title())
-     embed.add_field(name="Total Channels", value=len(server.channels))
-     embed.add_field(name="AFK Channel", value=str(server.afk_channel))
-     embed.add_field(name="AFK Timeout", value=server.afk_timeout)
-     embed.add_field(name="Verification Level", value=server.verification_level)
-     embed.add_field(name="Role {}".format(role_length), value = roles)
-     await client.send_message(message.channel, embed=embed)
+        await client.add_reaction(dmmessage, reaction1)
+        await client.add_reaction(dmmessage, reaction2)
+        await client.send_message(channel, '📨 Podívej se do PM pro více informací {}'.format(message.author.mention))
+        
+    if message.content.upper() == ">SERVER INFO":
+      h
+      server = message.server
+      roles = [x.name for x in server.role_hierarchy]
+      role_length = len(roles)
+      if role_length > 50: #Just in case there are too many roles...
+          roles = roles[:50]
+          roles.append('>>>> Displaying[50/%s] Roles'%len(roles))
+      roles = ', '.join(roles);
+      r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+      online = len([m.status for m in server.members if m.status == discord.Status.online or m.status == discord.Status.idle])
+      embed = discord.Embed(name="Informace o serveru {}".format(server.name), color = discord.Color((r << 16) + (g << 8) + b))
+      embed.set_thumbnail(url = server.icon_url)
+      embed.add_field(name="Jmeno Serveru", value=server.name, inline=True)
+      embed.add_field(name="Owner", value=server.owner.mention)
+      embed.add_field(name="Server ID", value=server.id, inline=True)
+      embed.add_field(name="Role", value=len(server.roles), inline=True)
+      embed.add_field(name="Kolik tu je hráčů?", value=len(server.members), inline=True)
+      embed.add_field(name="Online", value=f"**{online}/{len(server.members)}**")
+      embed.add_field(name="Server vytvořen", value=server.created_at.strftime("%d %b %Y %H:%M"))
+      embed.add_field(name="Emoji", value=f"{len(server.emojis)}/100")
+      embed.add_field(name="Server Region", value=str(server.region).title())
+      embed.add_field(name="Total Channels", value=len(server.channels))
+      embed.add_field(name="AFK Channel", value=str(server.afk_channel))
+      embed.add_field(name="AFK Timeout", value=server.afk_timeout)
+      embed.add_field(name="Verification Level", value=server.verification_level)
+      embed.add_field(name="Role {}".format(role_length), value = roles)
+      await client.send_message(message.channel, embed=embed)
    
       
 
