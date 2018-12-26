@@ -156,7 +156,7 @@ async def on_message(message):
               embed.set_image(url=data[0]["data"]["children"][0]["data"]["url"])
               embed.set_footer(text=f'Requested by: {message.author.display_name}', icon_url=f'{message.author.avatar_url}')
               embed.timestamp = datetime.datetime.utcnow()
-              await client.say(embed=embed)
+              await client.send_message(channel, embed=embed)
 		
       
 
