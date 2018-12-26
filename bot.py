@@ -100,9 +100,8 @@ async def on_message(message):
         embed.add_field(name="Muj prefix je",value="``>``!",inline=False)
         await client.send_message(channel, embed=embed)
     if message.content.upper() == ">HELP":
-        if message.author.bot:
-      return
-    else:
+        
+    
       author = message.author
       r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
